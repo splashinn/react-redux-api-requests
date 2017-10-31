@@ -1,5 +1,7 @@
 import React from 'react';
-
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {fetchUser} from '../actions/index';
 class SearchBar extends React.Component {
    constructor() {
        super();
@@ -22,8 +24,7 @@ class SearchBar extends React.Component {
    submitTerm(event) {
        event.preventDefault();
        console.log('-* state value *-', this.state.term)
-       document.querySelector('input').value = '';
-       document.querySelector('input').focus();
+       this.props.fetchUser(this.state.term)
    }
 
     render() {
@@ -38,4 +39,7 @@ class SearchBar extends React.Component {
     }
 }
 
-export default SearchBar;
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({fetchUser: fetchUser}, dispatch)
+}
+export default connect(null, mapDispatchToProps)(SearchBar)
