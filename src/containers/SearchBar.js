@@ -25,6 +25,9 @@ class SearchBar extends React.Component {
        event.preventDefault();
        console.log('-* state value *-', this.state.term)
        this.props.fetchUser(this.state.term)
+       this.setState({
+           term: ''
+       })
    }
 
     render() {

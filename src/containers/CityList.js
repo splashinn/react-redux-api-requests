@@ -2,6 +2,20 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 class CityList extends React.Component {
+   constructor() {
+       super();
+
+       this.renderData = this.renderData.bind(this);
+   }
+
+   renderData(data) {
+       return (
+           <tr key={data.city.name}>
+            <td>{data.city.name}</td>
+            </tr>
+       )
+   }
+
     render() {
         return (
             <table className="table table-hover">
@@ -14,6 +28,7 @@ class CityList extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
+                {this.props.weather.map(this.renderData)}
                 </tbody>
             </table>
         )

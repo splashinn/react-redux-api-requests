@@ -8,7 +8,7 @@ const FETCH_CITY = 'FETCH_CITY';
 export function fetchUser(city) {
     const url = `${ROOT_URL}&q=${city},us`;
     const request = axios.get(url)
-    console.log('from the action', request)
+    // console.log('from the action', request)
     return {
         type: constants.FETCH_CITY,
         payload: request

@@ -1,8 +1,10 @@
 import constants from '../constants/index';
 
-let initial_state = {
-    maps: []
-}
+// let initial_state = {
+//     maps: []
+// }
+
+let initial_state = [];
 
 export default function(state = initial_state, action) {
    switch(action.type) {
