@@ -39,7 +39,7 @@ class SearchBar extends React.Component {
     }
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({fetchUser: fetchUser}, dispatch)
 }
 export default connect(null, mapDispatchToProps)(SearchBar)
