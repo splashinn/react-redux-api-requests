@@ -2,6 +2,7 @@ import React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {fetchUser} from '../actions/index';
+
 class SearchBar extends React.Component {
    constructor() {
        super();
