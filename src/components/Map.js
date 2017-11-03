@@ -2,7 +2,7 @@ import React from 'react';
 
 class Map extends React.Component {
    componentDidMount() {
-       new google.maps.map(this.refs.map, {
+       new google.maps.Map(this.refs.map, {
            zoom: 12,
            center: {
                lat: this.props.lat,
@@ -10,12 +10,9 @@ class Map extends React.Component {
            }
        });
    }
-   
-    render() {
-        return (
-            <div ref="map"> </div>
-        )
-    }
+   render() {
+       return <div ref="map" />;
+   }
 }
 
 export default Map;
